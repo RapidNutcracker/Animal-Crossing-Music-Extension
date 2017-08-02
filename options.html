@@ -1,5 +1,6 @@
 <!doctype html>
 <html>
+
 <head>
 	<meta charset="utf-8">
 	<title>Animal Crossing Music</title>
@@ -15,6 +16,7 @@
 		}
 	</style>
 </head>
+
 <body class="chrome-bootstrap">
 	<div class="frame">
 		<div class="navigation">
@@ -50,32 +52,47 @@
 					</section>
 
 					<section>
-						<h3>Music</h3>
+						<h3>Game</h3>
 						<div class="radio">
-							<input id="animal-forrest" name="music-choice" type="radio"><label for="animal-forrest"><span><span></span></span>Animal Forest/Animal Crossing</label>
+							<input id="animal-crossing" name="game-choice" type="radio"><label for="animal-crossing"><span><span></span></span>Animal Forest/Animal Crossing</label>
 						</div>
 						<div class="radio">
-							<input id="wild-world" name="music-choice" type="radio"><label for="wild-world"><span><span></span></span>Wild World + City Folk/Let's Go to the City</label>
+							<input id="city-folk" name="game-choice" type="radio"><label for="city-folk"><span><span></span></span>Wild World/City Folk</label>
 						</div>
 						<div class="radio">
-							<input id="wild-world-snowing" name="music-choice" type="radio"><label for="wild-world-snowing"><span><span></span></span>Wild World + City Folk/Let's Go to the City (Snowing)</label>
+							<input id="new-leaf" name="game-choice" type="radio"><label for="new-leaf"><span><span></span></span>New Leaf</label>
 						</div>
 						<div class="radio">
-							<input id="new-leaf" name="music-choice" type="radio"><label for="new-leaf"><span><span></span></span>New Leaf</label>
+							<input id="random" name="game-choice" type="radio"><label for="random"><span><span></span></span>Random!</label>
 						</div>
-						<div class="radio">
-							<input id="new-leaf-raining" name="music-choice" type="radio"><label for="new-leaf-raining"><span><span></span></span>New Leaf (Raining)</label>
-						</div>
-						<div class="radio">
-							<input id="new-leaf-snowing" name="music-choice" type="radio"><label for="new-leaf-snowing"><span><span></span></span>New Leaf (Snowing)</label>
-						</div>
-						<div class="radio">
-							<input id="new-leaf-live" name="music-choice" type="radio"><label for="new-leaf-live"><span><span></span></span>New Leaf (<a href="http://openweathermap.org/current">Live Weather</a>)</label>
-						</div>
-						<div class="radio">
-							<input id="random" name="music-choice" type="radio"><label for="random"><span><span></span></span>Random!</label>
-						</div>
+					</section>
 
+					<section>
+						<h3>Weather</h3>
+						<div class="radio">
+							<input id="clear" name="weather-choice" type="radio">
+							<label for="clear">
+								<span><span></span></span>Normal
+							</label>
+						</div>
+						<div class="radio">
+							<input id="raining" name="weather-choice" type="radio">
+							<label for="rain">
+								<span><span></span></span>Raining
+							</label>
+						</div>
+						<div class="radio">
+							<input id="snowing" name="weather-choice" type="radio">
+							<label for="snow">
+								<span><span></span></span>Snowing
+							</label>
+						</div>
+						<div class="radio">
+							<input id="live" name="weather-choice" type="radio">
+							<label for="live">
+								<span><span></span></span><a href="http://openweathermap.org/current">Live Weather</a>
+							</label>
+						</div>
 					</section>
 
 					<section>
@@ -112,10 +129,10 @@
 					<section>
 						<h3>Live Weather Location</h3>
 						<div class="text">
-								<input type="text" id="zip-code" value="618708">
-								<input type="text" id="country-code" value="ru">
-								<button type="button" id="update-location">Update Location</button>
-								<label>(First box is <a href="http://www.geonames.org/postal-codes/" target="_blank">zip code</a>, second is <a href = "https://countrycode.org/" target="_blank">country code</a>)</label>
+							<input type="text" id="zip-code" value="618708">
+							<input type="text" id="country-code" value="ru">
+							<button type="button" id="update-location">Update Location</button>
+							<label>(First box is <a href="http://www.geonames.org/postal-codes/" target="_blank">zip code</a>, second is <a href = "https://countrycode.org/" target="_blank">country code</a>)</label>
 						</div>
 					</section>
 
@@ -156,7 +173,7 @@
 
 				<div class="content">
 					<div class="image-container">
-						<img src="img/icon_32.png" width="32" height="32" alt="Add-ons for NeoGAF">
+						<img src="img/icon_32_kk.png" width="32" height="32" alt="Add-ons for NeoGAF">
 						<div class="image-container-text">
 							<h2>Animal Crossing Music</h2>
 							<span>Play Animal Crossing's smooth background music in real-time throughout your day.</span>
@@ -186,7 +203,8 @@
 						<p>Extension originally created and maintained by Andrex from NeoGAF</p>
 						<p>Extension improved by blazescorch2</p>
 						<p>Idea for extension taken from <a href="http://tane.us/ac/">tane.us</a>.</p>
-						<p>This option page uses <a href="https://github.com/roykolak/chrome-bootstrap">Chrome Bootstrap</a> by Roy Kolak under the MIT License.</p>
+						<p>This option page uses <a href="https://github.com/roykolak/chrome-bootstrap">Chrome Bootstrap</a> by Roy Kolak under
+							the MIT License.</p>
 					</div>
 				</div>
 			</div>
@@ -195,4 +213,5 @@
 
 	<script src="scripts/options.js"></script>
 </body>
+
 </html>

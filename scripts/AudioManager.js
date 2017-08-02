@@ -11,7 +11,7 @@ function AudioManager(addEventListener, isTownTune) {
 
 	// isHourChange is true if it's an actual hour change,
 	// false if we're activating music in the middle of an hour
-	function playHourlyMusic(hour, game, isHourChange) {
+	function playHourlyMusic(hour, game, weather, isHourChange) {
 		clearLoop();
 		audio.loop = true;
 		audio.removeEventListener("ended", playKKSong);
@@ -19,19 +19,19 @@ function AudioManager(addEventListener, isTownTune) {
 		fadeOutAudio(fadeOutLength, function() {
 			if (isHourChange && isTownTune()) {
 				townTuneManager.playTune(function() {
-					playHourSong(game, hour, false);
+					playHourSong(game, hour, weather, false);
 				});
 			} else {
-				playHourSong(game, hour, false);
+				playHourSong(game, hour, weather, false);
 			}
 		});
 	}
 
 	// Plays a song for an hour, setting up loop times if
 	// any exist
-	function playHourSong(game, hour, skipIntro) {
+	function playHourSong(game, hour, weather, skipIntro) {
 		audio.loop = true;
-		audio.src = '../' + game + '/' + formatHour(hour) + 'm.ogg';
+		audio.src = '../audio/' + game + '/' + weather + '/' + formatHour(hour) + 'm.ogg';
 		var loopTime = (loopTimes[game] || {})[hour];
 		// set up loop points if loopTime is set up for this
 		// game and hour
@@ -63,9 +63,9 @@ function AudioManager(addEventListener, isTownTune) {
 		fadeOutAudio(500, playKKSong);
 	}
 
-	function playKKSong() {
-		var randomSong = Math.floor((Math.random() * 36) + 1).toString();
-		audio.src = '../kk/' + randomSong + '.ogg';
+	function playKKSong(type) {
+		var randomSong = Math.floor((Math.random() * 75) + 1);
+		audio.src = '../kk/' + type + '/' + randomSong + '.ogg';
 		audio.play();
 	}
 
@@ -110,6 +110,8 @@ function AudioManager(addEventListener, isTownTune) {
 	addEventListener("kkStart", playKKMusic);
 
 	addEventListener("gameChange", playHourlyMusic);
+
+	addEventListener("weatherChange", playHourlyMusic);
 
 	addEventListener("pause", function() {
 		clearLoop();

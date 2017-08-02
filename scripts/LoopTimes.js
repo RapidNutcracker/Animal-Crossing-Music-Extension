@@ -8,13 +8,13 @@
 // it won't introduce any bugs with the other hour tracks.
 
 var loopTimes = {
-	"animal-forrest" : {
+	"animal-crossing" : {
 		17 : {
 			start : 54.934,
 			end : 114.943
 		}
 	},
-	"wild-world" : {
+	"city-folk" : {
 		0 : {
 			start : 12.290,
 			end : 61.514 
